@@ -7,9 +7,38 @@
 # Eclipse files
 .settings
 
-# generated files
+# Generated files
 bin/
 gen/
 
 # Local configuration file (sdk path, etc)
 local.properties
+
+# Built application files
+*.apk
+*.ap_
+
+# Dalvic Executable files
+*.dex
+
+# Java class files
+*.class
+
+# Android Studio
+*.iml
+.idea/
+.gradle/
+.navigation
+build/
+captures/
+output.json
+
+# NDK
+obj/
+.externalNativeBuild
+
+# Windows thumbnail db
+Thumbs.db
+
+# Mac OSX files
+.DS_Store

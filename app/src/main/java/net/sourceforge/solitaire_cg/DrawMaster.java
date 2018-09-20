@@ -227,7 +227,7 @@ public class DrawMaster {
     drawable.draw(canvas);
 
     // Load suit bitmaps
-    drawable = r.getDrawable(R.drawable.suits);
+    drawable = r.getDrawable(R.drawable.medsuits);
     w = drawable.getIntrinsicWidth();
     h = drawable.getIntrinsicHeight();
     int suitWidth = w/4;
@@ -332,7 +332,7 @@ public class DrawMaster {
     drawable.draw(canvas);
 
     // Load big suit bitmaps
-    drawable = r.getDrawable(R.drawable.suits);
+    drawable = r.getDrawable(R.drawable.medsuits);
     w = drawable.getIntrinsicWidth();
     h = drawable.getIntrinsicHeight();
     int bigSuitWidth = w/4;
@@ -662,7 +662,7 @@ public class DrawMaster {
     drawable.draw(canvas);
 
     // Load suit bitmaps
-    drawable = r.getDrawable(R.drawable.suits);
+    drawable = r.getDrawable(R.drawable.bigsuits);
     w = drawable.getIntrinsicWidth();
     h = drawable.getIntrinsicHeight();
     int suitWidth = w/4;
@@ -674,7 +674,7 @@ public class DrawMaster {
     }
 
     // Load big suit bitmaps
-    drawable = r.getDrawable(R.drawable.bigsuits);
+    drawable = r.getDrawable(R.drawable.hugesuits);
     w = drawable.getIntrinsicWidth();
     h = drawable.getIntrinsicHeight();
     int bigSuitWidth = w/4;
@@ -781,7 +781,7 @@ public class DrawMaster {
     drawable.draw(canvas);
 
     // Load suit bitmaps
-    drawable = r.getDrawable(R.drawable.suits);
+    drawable = r.getDrawable(R.drawable.medsuits);
     w = drawable.getIntrinsicWidth();
     h = drawable.getIntrinsicHeight();
     for (int i = 0; i < 4; i++) {

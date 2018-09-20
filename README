@@ -34,6 +34,7 @@ SolitaireCG see the project web site:
 Change Log (in reverse chronological order)
 -------------------------------------------
 
+  * Improve visibility of suits for landscape orientation large card art
   * Migrate source code from ant to gradle build process
 
 ### Release v3.2.1 on Dec 14, 2017

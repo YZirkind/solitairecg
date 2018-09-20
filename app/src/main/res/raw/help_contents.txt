@@ -75,6 +75,7 @@ Game play may be customized with the following options:
 <p>
 Current game statistics are available, such as wins and losses.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="terms">Terminology</h2>
 <p>
@@ -121,12 +122,14 @@ sequence before you are able to move the cards to a foundation.
 An ordered sequence of cards that may be partial or full (13 in
 sequence cards).
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="bakersgame">Baker's Game</h2>
 <p>
 Play is the similar to <a href="#freecell">Freecell</a> except
 tableaus build down in suit.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="blackwidow">Black Widow</h2>
 <p>
@@ -134,6 +137,7 @@ Play is the same as <a href="#spider">Spider</a> except there is only
 one suit.  Less suits is easier to play.  See also <a
 href="#tarantula">Tarantula</a>.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="fortythieves">Forty Thieves</h2>
 <p>
@@ -161,6 +165,7 @@ Foundations build up in suit from the Ace.
 <b>Goal</b><br>
 Move all cards to the foundations.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="freecell">Freecell</h2>
 <p>
@@ -193,6 +198,7 @@ Move all cards to the foundations.
 alternating color, or <i><a href="#bakersgame">Baker's Game</a></i> by
 suit.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="golf">Golf</h2>
 <p>
@@ -219,6 +225,7 @@ Tap the stock to turn up one card onto the waste.
 <b>Goal</b><br>
 Empty all tableaus.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="golf-wrapcards">Golf (wrap cards)</h2>
 <p>
@@ -227,6 +234,7 @@ difference is that a King may be built upon.  Play is allowed to wrap
 from King to Ace and vice versa which is known as
 "turning-the-corner".
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="klondike-deal1">Klondike (deal 1)</h2>
 <p>
@@ -234,6 +242,7 @@ Play is similar to <a href="#klondike-deal3">Klondike (deal 3)</a>.
 The key difference is that cards are dealt from the stock one at a
 time.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="klondike-deal3">Klondike (deal 3)</h2>
 <p>
@@ -275,6 +284,7 @@ card at at time, or <i>(deal 3)</i> three cards at a time.<br>
 times, or <i>(<a href="#vegas-deal1">Vegas</a>)</i> only once and keep
 score.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="spider">Spider</h2>
 <p>
@@ -310,12 +320,14 @@ suits is easier to play.<br>
 <i><a href="#tarantula">Tarantula</a></i> - Use two suits.<br>
 <i>Spider</i> -  Use four suits.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="tarantula">Tarantula</h2>
 <p>
 Play is the same as <a href="#spider">Spider</a> except there are only
 two suits.  See also <a href="#blackwidow">Black Widow</a>.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="tripeaks">TriPeaks</h2>
 <p>
@@ -340,6 +352,7 @@ Tap the stock to turn up one card onto the waste.
 <b>Goal</b><br>
 Empty all tableaus.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="tripeaks-wrapcards">TriPeaks (wrap cards)</h2>
 <p>
@@ -348,6 +361,7 @@ key difference is that a King may be built upon.  Play is allowed to
 wrap from King to Ace and vice versa which is known as
 "turning-the-corner".
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="vegas-deal1">Vegas (deal 1)</h2>
 <p>
@@ -361,6 +375,7 @@ placed on a foundation built from ace up.  The score is cumulative
 over consecutively played games.  The score is reset when a different
 type of game is selected, for example <i>Golf</i>.
 </p>
+<a href="#top">Back to top</a>
 
 <h2 id="vegas-deal3">Vegas (deal 3)</h2>
 <p>
@@ -371,3 +386,4 @@ permitted.<br>
 Virtual currency is used to track score similar to
 <a href="#vegas-deal1">Vegas (deal 1)</a>.
 </p>
+<a href="#top">Back to top</a>

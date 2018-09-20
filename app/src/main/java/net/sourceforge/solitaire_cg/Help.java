@@ -70,27 +70,38 @@ public class Help extends Activity {
     // Alternatively:
     //   mWebView.loadUrl("file:///android_res/raw/help_contents.txt");
     String helpText = "<html><body>"
+      + "<a name=\"top\"></a>"
       + "<h1>" + String.format(this.getString(R.string.help_window_title), SolitaireCG.VERSION_NAME) + "</h1>"
       + Utils.readRawTextFile(this, R.raw.help_contents).replace("\n"," ")
         // Append README file
       + "<hr>"
       + "<h2 id='readme'>"
       + this.getString(R.string.readme_header)
-      + "</h2></a>"
+      + "</h2>"
       + "<pre style='font-size:smaller;'>"
       + Utils.readRawTextFile(this, R.raw.readme).replace("\n","<br>")
       + "</pre>"
+      + "<a href=\"#top\">Back to top</a>"
         // Append COPYING file
       + "<hr>"
       + "<h2 id='copying'>"
       + this.getString(R.string.copying_header)
-      + "</h2></a>"
+      + "</h2>"
       + "<pre style='font-size:smaller;'>"
       //Work around android API loadData issue 4401 problem with % character
       + Utils.readRawTextFile(this, R.raw.copying).replace("\n","<br>").replace("%","&#37;")
       + "</pre>"
+      + "<a href=\"#top\">Back to top</a>"
       + "</body></html>";
-    mWebView.loadData(helpText, "text/html; charset=utf-8", "utf-8");
+
+    // Check for Android API = 10 (Gingerbread 2.2.3) and load the
+    // help text using loadData instead.
+    // Reason:  loadDataWithBaseURL displays html as plain text on API10.
+    if ( Integer.valueOf(android.os.Build.VERSION.SDK) == 10 ) {
+      mWebView.loadData( helpText, "text/html; charset=utf-8", "utf-8");
+    } else {
+      mWebView.loadDataWithBaseURL("app:helpText", helpText, "text/html; charset=utf-8", "utf-8", "");
+    }
   }
 
   // The following three methods attempt to maintain the user's

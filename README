@@ -29,11 +29,12 @@ See the source code for copyright owners.
 To report an issue, download older APK files, and learn more about
 SolitaireCG see the project web site:
 
-    http://solitairecg.sourceforge.net/
+    https://solitairecg.sourceforge.io/
 
 Change Log (in reverse chronological order)
 -------------------------------------------
 
+  * Update web site link from http to https
   * Fix help file hyperlinks and add back-to-top links
   * Improve visibility of suits for landscape orientation large card art
   * Migrate source code from ant to gradle build process

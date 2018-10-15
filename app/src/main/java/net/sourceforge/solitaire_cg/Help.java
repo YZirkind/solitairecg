@@ -94,10 +94,10 @@ public class Help extends Activity {
       + "<a href=\"#top\">Back to top</a>"
       + "</body></html>";
 
-    // Check for Android API = 10 (Gingerbread 2.2.3) and load the
-    // help text using loadData instead.
-    // Reason:  loadDataWithBaseURL displays html as plain text on API10.
-    if ( Integer.valueOf(android.os.Build.VERSION.SDK) == 10 ) {
+    // Check for Android API <= 18 (Android 4.3 Jelly Bean) and load the
+    // help text using loadData instead.  The reason is because
+    // loadDataWithBaseURL() displays html as plain text on lower APIs.
+    if ( Integer.valueOf(android.os.Build.VERSION.SDK) <= 18 ) {
       mWebView.loadData( helpText, "text/html; charset=utf-8", "utf-8");
     } else {
       mWebView.loadDataWithBaseURL("app:helpText", helpText, "text/html; charset=utf-8", "utf-8", "");

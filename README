@@ -34,6 +34,7 @@ SolitaireCG see the project web site:
 Change Log (in reverse chronological order)
 -------------------------------------------
 
+  * Ensure help shown as html for Android 4.3 and lower (API 18 Jelly Bean)
   * Update web site link from http to https
   * Fix help file hyperlinks and add back-to-top links
   * Improve visibility of suits for landscape orientation large card art

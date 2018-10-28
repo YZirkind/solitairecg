@@ -461,6 +461,8 @@ public class SolitaireView extends View {
 
   public void SetTextView(TextView textView) {
     mTextView = textView;
+    // Initialise text color to white
+    mTextView.setTextColor(0xAAFFFFFF);
   }
 
   protected void onSizeChanged(int w, int h, int oldw, int oldh) {

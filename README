@@ -34,6 +34,8 @@ SolitaireCG see the project web site:
 Change Log (in reverse chronological order)
 -------------------------------------------
 
+  * Initialise text color to white
+
 ### Release v3.3 on Oct 19, 2018
   * Ensure help shown as html for Android 4.3 and lower (API 18 Jelly Bean)
   * Update web site link from http to https

@@ -170,7 +170,6 @@ public class SolitaireView extends View {
       }
     }
     ChangeViewMode(MODE_NORMAL);
-    mTextView.setVisibility(View.INVISIBLE);
     mMoveHistory.clear();
     mRules = Rules.CreateRules(gameType, null, this, mMoveHistory, mAnimateCard);
     if (oldGameType == mRules.GetGameTypeString()) {
@@ -200,6 +199,7 @@ public class SolitaireView extends View {
   public Rules GetRules() { return mRules; }
   public void ClearGameStarted() { mGameStarted = false; }
   public void SetDisplayTime(boolean displayTime) { mDisplayTime = displayTime; }
+
   public void SetTimePassing(boolean timePassing) {
     if (timePassing == true && (mViewMode == MODE_WIN || mViewMode == MODE_WIN_STOP)) {
       return;
@@ -228,6 +228,7 @@ public class SolitaireView extends View {
         if (newMode != MODE_NORMAL) {
           DrawBoard();
         }
+        mTextView.setVisibility(View.INVISIBLE);
         break;
       case MODE_MOVE_CARD:
         mMoveCard.Release();
@@ -238,7 +239,7 @@ public class SolitaireView extends View {
         DrawBoard();
         break;
       case MODE_TEXT:
-        mTextView.setVisibility(View.INVISIBLE);
+        mTextView.setVisibility(View.VISIBLE);
         break;
       case MODE_ANIMATE:
         mRefreshHandler.SetRefresh(RefreshHandler.SINGLE_REFRESH);
@@ -263,7 +264,12 @@ public class SolitaireView extends View {
         break;
 
       case MODE_NORMAL:
+        mTextView.setVisibility(View.INVISIBLE);
+        mRefreshHandler.SetRefresh(RefreshHandler.SINGLE_REFRESH);
+        break;
+
       case MODE_TEXT:
+        mTextView.setVisibility(View.VISIBLE);
       case MODE_WIN_STOP:
         mRefreshHandler.SetRefresh(RefreshHandler.SINGLE_REFRESH);
         break;
@@ -475,7 +481,7 @@ public class SolitaireView extends View {
       Toast.makeText(mContext, R.string.toast_use_start_menu, Toast.LENGTH_SHORT).show();
       return;
     }
-    mTextView.setTextSize(15);
+    mTextView.setTextSize(18);
     mTextView.setGravity(Gravity.LEFT);
     DisplayText(mSplashText);
   }
@@ -485,7 +491,6 @@ public class SolitaireView extends View {
     mTextView.setGravity(Gravity.CENTER_HORIZONTAL);
     DisplayText(mWinText);
     ChangeViewMode(MODE_WIN);
-    mTextView.setVisibility(View.VISIBLE);
     mRules.SetIgnoreEvents(true);
     mReplay.StartReplay(mMoveHistory, mCardAnchor);
   }
@@ -516,9 +521,8 @@ public class SolitaireView extends View {
   }
 
   public void DisplayText(CharSequence text) {
-    ChangeViewMode(MODE_TEXT);
-    mTextView.setVisibility(View.VISIBLE);
     mTextView.setText(text);
+    ChangeViewMode(MODE_TEXT);
     Refresh();
   }
 

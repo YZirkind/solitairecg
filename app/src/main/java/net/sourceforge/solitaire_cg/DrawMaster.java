@@ -77,7 +77,7 @@ public class DrawMaster {
     mBGPaint.setARGB(255, 0, 128, 0);
 
     mShadePaint = new Paint();
-    mShadePaint.setARGB(200, 0, 0, 0);
+    mShadePaint.setARGB(125, 0, 0, 0);
 
     mLightShadePaint = new Paint();
     mLightShadePaint.setARGB(100, 0, 0, 0);

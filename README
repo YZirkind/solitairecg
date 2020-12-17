@@ -1,27 +1,15 @@
-Original by Ken Magic
-=====================
+Updated README by Curtis Gedak
+==============================
 
-Simple solitaire game.
-
-Currently documentation is limited but I will add comments to the source and
-detail the structure in here. 
-
-Build Instructions:
-------------------
-I do not use eclipse so I can't really guarantee that it will build in that
-environment. 
-
-First off you need to download the SDK from http://code.google.com/android.
-Once installed you need to modify solitaire's build.xml file to include the
-path to the SDK (Two lines near the top). Then running ant should complete the
-job. If you have difficulties, try building a sample program from
-code.google.com first which has a bunch of detail and troubleshooting info.
-
-
-Added by Curtis Gedak
-=====================
 SolitaireCG is Ken Magic's "Solitaire" adapted to work on devices with
 few hardware buttons.  Original author is still Ken Magic.
+
+Solitaire Card Games include Klondike (regular solitaire), Vegas,
+Spider, Golf, Freecell, Forty Thieves, TriPeaks, and variations of
+these games.
+
+Features include multi-level undo, animated card movement,
+statistics/score tracking, and large card art option.
 
 SolitaireCG is available under Apache License 2.0, see COPYING.
 See the source code for copyright owners.
@@ -33,6 +21,8 @@ SolitaireCG see the project web site:
 
 Change Log (in reverse chronological order)
 -------------------------------------------
+
+  * Update README to place most relevant information at top
 
 ### Release v3.4 on Oct 5, 2020
   * Reduce background dimming when displaying You Win message
@@ -198,3 +188,23 @@ Change Log (in reverse chronological order)
   * Fork project from Solitaire to SolitaireCG
   * Add .gitignore file
   * Upgrade project from an older version of the Android SDK
+
+
+Original README by Ken Magic
+============================
+
+Simple solitaire game.
+
+Currently documentation is limited but I will add comments to the source and
+detail the structure in here.
+
+Build Instructions:
+------------------
+I do not use eclipse so I can't really guarantee that it will build in that
+environment.
+
+First off you need to download the SDK from http://code.google.com/android.
+Once installed you need to modify solitaire's build.xml file to include the
+path to the SDK (Two lines near the top). Then running ant should complete the
+job. If you have difficulties, try building a sample program from
+code.google.com first which has a bunch of detail and troubleshooting info.

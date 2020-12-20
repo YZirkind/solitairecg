@@ -23,8 +23,8 @@ android {
         applicationId "net.sourceforge.solitaire_cg"
         minSdkVersion 4
         targetSdkVersion 4
-        versionCode 734
-        versionName "3.4"
+        versionCode 3041
+        versionName "3.4.1"
     }
 
     buildTypes {

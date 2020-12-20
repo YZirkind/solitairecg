@@ -22,6 +22,7 @@ SolitaireCG see the project web site:
 Change Log (in reverse chronological order)
 -------------------------------------------
 
+### Release v3.4.1 on Dec 20, 2020
   * Upgrade to gradle 5.4.1 build process
   * Add Fastlane file structure for F-Droid app store
   * Update README to place most relevant information at top

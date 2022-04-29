@@ -91,5 +91,5 @@ VINKKI:  Paina pitkään ^-merkkiä ruudun keskiosan alalaidassa tuodaksesi esii
     <string name="stats_fastest_time">Nopein aika: %s</string>
 
     <!-- The argument is the user's high score as an integer -->
-    <string name="stats_high_score">Ennätyspisteet: %s</string>
+    <string name="stats_high_score">Ennätyspisteet: %d</string>
 </resources>

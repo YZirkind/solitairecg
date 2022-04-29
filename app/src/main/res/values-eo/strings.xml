@@ -89,5 +89,5 @@ KONSILO:  Premtenu ^ ĉe suba centro de ekrano por montri alternativan menuon.
     <string name="stats_fastest_time">Plej bona tempo: %s</string>
 
     <!-- The argument is the user's high score as an integer -->
-    <string name="stats_high_score">Plej multe da poentoj: %s</string>
+    <string name="stats_high_score">Plej multe da poentoj: %d</string>
 </resources>

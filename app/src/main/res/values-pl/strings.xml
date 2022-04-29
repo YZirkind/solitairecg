@@ -89,5 +89,5 @@ PORADA:  Przytrzymaj ^ na środkowym dole ekranu aby wyświetlić alternatywne m
     <string name="stats_fastest_time">Najszybszy czas: %s</string>
 
     <!-- The argument is the user's high score as an integer -->
-    <string name="stats_high_score">Najlepszy wynik: %s</string>
+    <string name="stats_high_score">Najlepszy wynik: %d</string>
 </resources>

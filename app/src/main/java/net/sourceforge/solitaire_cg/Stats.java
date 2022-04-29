@@ -23,7 +23,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
 public class Stats {
 
   public Stats(final SolitaireCG solitaire, final SolitaireView view) {
@@ -67,36 +66,27 @@ public class Stats {
 
 
     final Button accept = (Button) solitaire.findViewById(R.id.button_accept);
-    accept.setOnClickListener(new View.OnClickListener() {
-      public void onClick(View v) {
-        solitaire.CancelOptions();
-      }
-    });
+    accept.setOnClickListener(v -> solitaire.CancelOptions());
     final Button clear = (Button) solitaire.findViewById(R.id.button_clear);
-    clear.setOnClickListener(new View.OnClickListener() {
-      public void onClick(View v) {
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putInt(gameAttemptString, 0);
-        editor.putInt(gameWinString, 0);
-        editor.putInt(gameTimeString, -1);
-        editor.commit();
-        view.ClearGameStarted();
-        solitaire.CancelOptions();
-      }
+    clear.setOnClickListener(v -> {
+      SharedPreferences.Editor editor = settings.edit();
+      editor.putInt(gameAttemptString, 0);
+      editor.putInt(gameWinString, 0);
+      editor.putInt(gameTimeString, -1);
+      editor.commit();
+      view.ClearGameStarted();
+      solitaire.CancelOptions();
     });
-    statsView.setOnKeyListener(new View.OnKeyListener() {
-      @Override
-      public boolean onKey(View v, int keyCode, KeyEvent event) {
-        switch (keyCode) {
-          case KeyEvent.KEYCODE_BACK:
-            solitaire.CancelOptions();
-            return true;
-          case KeyEvent.KEYCODE_MENU:
-	    // Disable menu in stats screen
-            return true;
-        }
-        return false;
+    statsView.setOnKeyListener((v, keyCode, event) -> {
+      switch (keyCode) {
+        case KeyEvent.KEYCODE_BACK:
+          solitaire.CancelOptions();
+          return true;
+        case KeyEvent.KEYCODE_MENU:
+      // Disable menu in stats screen
+          return true;
       }
+      return false;
     });
     statsView.requestFocus();
   }

@@ -91,5 +91,5 @@ TIP:  Long press ^ at bottom center of screen for alternate menu.
     <string name="stats_fastest_time">Fastest Time: %s</string>
 
     <!-- The argument is the user's high score as an integer -->
-    <string name="stats_high_score">High Score: %s</string>
+    <string name="stats_high_score">High Score: %d</string>
 </resources>

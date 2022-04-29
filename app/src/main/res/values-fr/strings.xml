@@ -89,5 +89,5 @@ CONSEIL :  Appuyez longtemps sur ^ en bas au centre de l\'écran pour afficher l
     <string name="stats_fastest_time">Meilleur temps : %s</string>
 
     <!-- The argument is the user's high score as an integer -->
-    <string name="stats_high_score">Meilleur score : %s</string>
+    <string name="stats_high_score">Meilleur score : %d</string>
 </resources>

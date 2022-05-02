@@ -14,6 +14,7 @@
   limitations under the License.
 
   Modified by Curtis Gedak 2015, 2016, 2017
+  Modified by Yeshayohu Zirkind 2022
 */
 package net.sourceforge.solitaire_cg;
 
@@ -575,18 +576,23 @@ public class SolitaireView extends View {
   }
 
   @Override
-  public boolean onKeyDown(int keyCode, KeyEvent msg) {
-    switch (keyCode) {
-      case KeyEvent.KEYCODE_DPAD_CENTER:
-      case KeyEvent.KEYCODE_SEARCH:
-        Deal();
-        return true;
-      case KeyEvent.KEYCODE_BACK:
-        Undo();
-        return true;
+  public boolean dispatchKeyEvent(KeyEvent event) {
+    // According to https://stackoverflow.com/a/41646524 dispatchKeyEvent is more reliable than
+    // onKeyDown, but it gets called twice (once for keyDown and again for keyUp), so to keep the
+    // old functionality we need this extra check
+    if (event.getAction() == KeyEvent.ACTION_DOWN) {
+      switch (event.getKeyCode()) {
+        case KeyEvent.KEYCODE_DPAD_CENTER:
+        case KeyEvent.KEYCODE_SEARCH:
+          Deal();
+          return true;
+        case KeyEvent.KEYCODE_BACK:
+          Undo();
+          return true;
+      }
+      mRules.HandleEvents();
     }
-    mRules.HandleEvents();
-    return super.onKeyDown(keyCode, msg);
+    return super.dispatchKeyEvent(event);
   }
 
   @Override

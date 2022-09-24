@@ -381,6 +381,10 @@ public class SolitaireView extends View {
     mDrawMaster.DrawCards(GetSettings().getBoolean("DisplayBigCards", false));
     mTimePaused = true;
 
+    setFocusable(true);
+    setFocusableInTouchMode(true);
+    requestFocus();
+
     try {
       FileInputStream fin = mContext.openFileInput(SAVE_FILENAME);
       ObjectInputStream oin = new ObjectInputStream(fin);

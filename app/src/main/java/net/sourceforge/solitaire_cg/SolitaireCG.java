@@ -22,19 +22,21 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Objects;
 
 // Base activity class.
 public class SolitaireCG extends Activity {
@@ -95,9 +97,7 @@ public class SolitaireCG extends Activity {
 
     // Force landscape for Android API < 14 (Ice Cream Sandwich)
     //   Earlier versions do not change screen size on orientation change
-    if (   Integer.valueOf(android.os.Build.VERSION.SDK) < 14
-        || mSettings.getBoolean("LockLandscape", false)
-       ) {
+    if (Build.VERSION.SDK_INT < 14 || mSettings.getBoolean("LockLandscape", false)) {
       setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 
@@ -131,7 +131,7 @@ public class SolitaireCG extends Activity {
     if (mSettings.getBoolean("SolitaireSaveValid", false)) {
       SharedPreferences.Editor editor = GetSettings().edit();
       editor.putBoolean("SolitaireSaveValid", false);
-      editor.commit();
+      editor.apply();
       // If save is corrupt, just start a new game.
       if (mSolitaireView.LoadSave()) {
         SplashScreen();
@@ -186,12 +186,12 @@ public class SolitaireCG extends Activity {
     switch (item.getItemId()) {
       case MENU_BAKERSGAME:
         editor.putBoolean("FreecellBuildBySuit", true);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.FREECELL);
         break;
       case MENU_BLACKWIDOW:
         editor.putInt("SpiderSuits", 1);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.SPIDER);
         break;
       case MENU_FORTYTHIEVES:
@@ -199,61 +199,61 @@ public class SolitaireCG extends Activity {
         break;
       case MENU_FREECELL:
         editor.putBoolean("FreecellBuildBySuit", false); //BuildByAlternateColor
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.FREECELL);
         break;
       case MENU_GOLF:
         editor.putBoolean("GolfWrapCards", false); //No build on King
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.GOLF);
         break;
       case MENU_GOLF_WRAPCARDS:
         editor.putBoolean("GolfWrapCards", true); //WrapCards (A,Q on K, etc.)
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.GOLF);
         break;
       case MENU_KLONDIKE_DEALONE:
         editor.putBoolean("KlondikeDealThree", false);
         editor.putBoolean("KlondikeStyleNormal", true);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.KLONDIKE);
         break;
       case MENU_KLONDIKE_DEALTHREE:
         editor.putBoolean("KlondikeDealThree", true);
         editor.putBoolean("KlondikeStyleNormal", true);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.KLONDIKE);
         break;
       case MENU_SPIDER:
         editor.putInt("SpiderSuits", 4);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.SPIDER);
         break;
       case MENU_TARANTULA:
         editor.putInt("SpiderSuits", 2);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.SPIDER);
         break;
       case MENU_TRIPEAKS:
         editor.putBoolean("GolfWrapCards", false); //No build on King
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.TRIPEAKS);
         break;
       case MENU_TRIPEAKS_WRAPCARDS:
         editor.putBoolean("GolfWrapCards", true); //WrapCards (A,Q on K, etc.)
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.TRIPEAKS);
         break;
       case MENU_VEGAS_DEALONE:
         editor.putBoolean("KlondikeDealThree", false);
         editor.putBoolean("KlondikeStyleNormal", false);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.KLONDIKE);
         break;
       case MENU_VEGAS_DEALTHREE:
         editor.putBoolean("KlondikeDealThree", true);
         editor.putBoolean("KlondikeStyleNormal", false);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.KLONDIKE);
         break;
       case MENU_NEW:
@@ -329,12 +329,12 @@ public class SolitaireCG extends Activity {
     switch (item.getItemId()) {
       case MENU_BAKERSGAME:
         editor.putBoolean("FreecellBuildBySuit", true);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.FREECELL);
         break;
       case MENU_BLACKWIDOW:
         editor.putInt("SpiderSuits", 1);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.SPIDER);
         break;
       case MENU_FORTYTHIEVES:
@@ -342,61 +342,61 @@ public class SolitaireCG extends Activity {
         break;
       case MENU_FREECELL:
         editor.putBoolean("FreecellBuildBySuit", false); //BuildByAlternateColor
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.FREECELL);
         break;
       case MENU_GOLF:
         editor.putBoolean("GolfWrapCards", false); //No build on King
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.GOLF);
         break;
       case MENU_GOLF_WRAPCARDS:
         editor.putBoolean("GolfWrapCards", true); //WrapCards (A,Q on K, etc.)
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.GOLF);
         break;
       case MENU_KLONDIKE_DEALONE:
         editor.putBoolean("KlondikeDealThree", false);
         editor.putBoolean("KlondikeStyleNormal", true);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.KLONDIKE);
         break;
       case MENU_KLONDIKE_DEALTHREE:
         editor.putBoolean("KlondikeDealThree", true);
         editor.putBoolean("KlondikeStyleNormal", true);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.KLONDIKE);
         break;
       case MENU_SPIDER:
         editor.putInt("SpiderSuits", 4);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.SPIDER);
         break;
       case MENU_TARANTULA:
         editor.putInt("SpiderSuits", 2);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.SPIDER);
         break;
       case MENU_TRIPEAKS:
         editor.putBoolean("GolfWrapCards", false); //No build on King
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.TRIPEAKS);
         break;
       case MENU_TRIPEAKS_WRAPCARDS:
         editor.putBoolean("GolfWrapCards", true); //WrapCards (A,Q on K, etc.)
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.TRIPEAKS);
         break;
       case MENU_VEGAS_DEALONE:
         editor.putBoolean("KlondikeDealThree", false);
         editor.putBoolean("KlondikeStyleNormal", false);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.KLONDIKE);
         break;
       case MENU_VEGAS_DEALTHREE:
         editor.putBoolean("KlondikeDealThree", true);
         editor.putBoolean("KlondikeStyleNormal", false);
-        editor.commit();
+        editor.apply();
         mSolitaireView.InitGame(Rules.KLONDIKE);
         break;
       case MENU_NEW:
@@ -454,9 +454,7 @@ public class SolitaireCG extends Activity {
 
     // Force landscape for Android API < 14 (Ice Cream Sandwich)
     //   Earlier versions do not change screen size on orientation change
-    if (   Integer.valueOf(android.os.Build.VERSION.SDK) < 14
-        || mSettings.getBoolean("LockLandscape", false)
-       ) {
+    if (Build.VERSION.SDK_INT < 14 || mSettings.getBoolean("LockLandscape", false)) {
       setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     } else {
       // Needed to clear orientation when lock landscape option not set
@@ -466,7 +464,7 @@ public class SolitaireCG extends Activity {
     mSolitaireView.onResume();
 
     // Restore previous state after configuration/orientation change
-    if (GetRestoreState() == "STATS") {
+    if (Objects.equals(GetRestoreState(), "STATS")) {
       DisplayStats();
     }
   }
